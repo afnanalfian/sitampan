@@ -17,9 +17,27 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+        $this->call([
+            // Seeder untuk data master
+            BidangSeeder::class,
+            UnitOrganisasiSeeder::class,
+            SubUnitOrganisasiSeeder::class,
+            KecamatanSeeder::class,
+            KelurahanSeeder::class,
+            HakSeeder::class,
+            PenggunaanSeeder::class,
+            AsalUsulSeeder::class,
+            
+            // Seeder untuk Role dan User
+            RoleAndPermissionSeeder::class,
+            UserSeeder::class,
+            
+            // Seeder untuk data tanah (contoh)
+            TanahSeeder::class,
         ]);
     }
 }
